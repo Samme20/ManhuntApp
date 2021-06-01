@@ -3,6 +3,9 @@ import styles from "./Styles";
 import React, { useState } from 'react';
 
 export const HunterButton = function (){
+
+
+
     return (
         <TouchableOpacity style={styles.hunterButton}>
             <Text style={styles.hunterButtonText}>Hunter</Text>

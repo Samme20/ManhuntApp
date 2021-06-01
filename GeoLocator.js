@@ -26,7 +26,7 @@ class GeoLocator extends Component {
                     longitude,
                 });
             },
-            { enableHighAccuracy: true, timeOut: 20000, maximumAge: 20}
+            { enableHighAccuracy: true, timeOut: 1000, maximumAge: 20}
         );
     };
     
