@@ -10,6 +10,7 @@ export default function App() {
     setNumber(2)
   }
 
+
   return (
     <View style={styles.body}>
       <View style={styles.view1}>
@@ -25,38 +26,42 @@ export default function App() {
     </View>
   );
 }
+
+var lemon = "#EAE2B7";
+var red = "#D62828";
+var blue = "#003049";
 const styles = StyleSheet.create({
   body: {
     flex: 1,
-    backgroundColor: '#EAE2B7',
+    backgroundColor: lemon,
     alignItems: 'stretch',
     justifyContent: 'center',
   },
   view1: {
     flex: 1,
-    backgroundColor: '#EAE2B7',
+    backgroundColor: lemon,
     alignItems: 'center',
     justifyContent: 'center',
   },
   view2: {
     flex: 1,
-    backgroundColor: '#EAE2B7',
+    backgroundColor: lemon,
     alignItems: 'center',
     justifyContent: 'center',
   },
   view3: {
     flex: 1,
-    backgroundColor: '#D62828',
+    backgroundColor: red,
     alignItems: 'center',
     justifyContent: 'center',
   },
   title: {
-    color: '#D62828',
+    color: red,
     fontSize: 42,
     textTransform: 'uppercase',
   },
   text: {
-    color: '#003049',
+    color: blue,
     fontSize: 30,
     margin: 10,
   },
