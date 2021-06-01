@@ -4,10 +4,10 @@ import { View, Text, Button } from 'react-native';
 //Import Expo
 import { StatusBar } from 'expo-status-bar';
 //Import Files
-import styles from "./Styles";
-import GeoLocator from "./GeoLocator";
-import { HunterButton } from './Hunter';
-import { HuntedButton } from './Hunted';
+import styles from '../assets/stylesheets/Styles';
+import GeoLocator from "../scripts/GeoLocator";
+import { HunterButton } from '../assets/buttons/Hunter';
+import { HuntedButton } from '../assets/buttons/Hunted';
 
 
 // MAIN //
