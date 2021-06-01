@@ -1,27 +1,32 @@
+//Import React
+import React, { Component } from 'react';
+import { View, Text, Button } from 'react-native';
+//Import Expo
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Button, Linking, TextInput } from 'react-native';
+//Import Files
 import styles from "./Styles";
-import React, { useState } from 'react';
-
-
-export default function App() {
+import { HunterButton } from './Hunter';
+import { HuntedButton } from './Hunted';
 
 
 
-  return (
-    <View style={styles.body}>
-      <StatusBar style="auto" />
- 
-      <View style={styles.content1}>
-        <Text style={styles.title}>WorldScape</Text>
-        <Text style={styles.text}></Text>
+// MAIN //
+export default class App extends Component {
+  
+	render() {
+    return(
+      <View style = { styles.body } >
+        <StatusBar style="auto" />
+
+        <View style={styles.content1}>
+          <Text style={styles.title}>WorldScape</Text>
+        </View>
+
+        <View style={styles.mainButtons}>
+          <HunterButton/>
+          <HuntedButton/>
+        </View>
       </View>
-
-      <View style={styles.huntedButtons}>
-        <Button style={styles.hButton} title={'Hunted'}></Button>
-        <Button style={styles.hButton} title={'Hunter'}></Button>
-      </View>
-      
-    </View>
-  );
+    ); 
+  }
 }

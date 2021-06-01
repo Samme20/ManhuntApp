@@ -1,37 +1,59 @@
 import { StyleSheet, Button } from 'react-native';
 
 
-//Colors
+//Main theme colors
 var lemon = "#EAE2B7";
-var red = "#D62828";
-var blue = "#003049";
+var maxred = "#D62828";
+var prusblue = "#003049";
+var orange = "#F77F00";
 
 export default StyleSheet.create({
     body: {
         flex: 1,
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'space-evenly',
         backgroundColor: lemon,
     },
     title: {
-        color: red,
-        fontSize: 42,
+        color: maxred,
+        fontSize: 60,
+        borderBottomWidth: 3,
+        borderBottomColor: maxred,
     },
     content1: {
-        flex: 1.5,
+        flex: 1,
         justifyContent: 'center',
     },
-    huntedButtons: {
-        flex: 2,
-        width: 150,
+    mainButtons: {
+        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: blue,
+        justifyContent: 'space-evenly',
+    },
+    huntedButton: {
+        margin: 30,
+        backgroundColor: orange,
+        borderRadius: 6,
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+    },
+    huntedButtonText: {
+        fontSize: 50,
+        color: prusblue,
+    },
+    hunterButton: {
+        margin: 30,
+        backgroundColor: orange,
+        borderRadius: 6,
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+    },
+    hunterButtonText: {
+        fontSize: 50,
+        color: prusblue,
     },
     text: {
-        color: blue,
+        color: prusblue,
         fontSize: 30,
         margin: 10,
     },
