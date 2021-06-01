@@ -10,7 +10,6 @@ import { HunterButton } from './Hunter';
 import { HuntedButton } from './Hunted';
 
 
-
 // MAIN //
 export default class App extends Component {
 
@@ -28,8 +27,8 @@ export default class App extends Component {
         </View>
 
         <View style={styles.mainButtons}>
-          <HunterButton/>
-          <HuntedButton/>
+          <HunterButton />
+          <HuntedButton />
         </View>
       </View>
     ); 

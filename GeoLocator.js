@@ -1,53 +1,66 @@
 //Import React
 import React, { Component } from 'react';
-import { View, Text, Button, Permission } from 'react-native';
+import { View, Text, Button, Permission, TouchableOpacity } from 'react-native';
+import * as Permissions from 'expo-permissions';
+import * as Location from 'expo-location';
 //Import Files
 import styles from "./Styles";
 
-export default class GeoLocator extends Component {
+class GeoLocator extends Component {
     constructor() {
         super();
         this.state = {
-            ready: false,
-            where: { lat: null, lng: null },
-            error: null
+            location: null,
+            errorMessage: null
         }
     }
-    componentDidMount() {
-        let geoOptions = {
-            enableHighAccuracy: true,
-            timeOut: 2000,
-            maximumAge: 6
-        };
-        this.setState({ ready: false, error: null });
-        navigator.geolocation.getCurrentPosition(this.geoSuccess,
-            this.geoFailure,
-            geoOptions);
-    }
-    geoSuccess = (position) => {
 
-        this.setState({
-            ready: true,
-            where: { lat: position.coords.latitude, lng: position.coords.longitude }
-        })
-    }
-    geoFailure = (err) => {
-        this.setState({ error: err.message });
-    }
+    findCurrentLocation = () => {
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                const latitude = JSON.stringify(position.coords.latitude);
+                const longitude = JSON.stringify(position.coords.longitude);
+
+                this.setState({
+                    latitude,
+                    longitude,
+                });
+            },
+            { enableHighAccuracy: true, timeOut: 20000, maximumAge: 20}
+        );
+    };
+    
+    findCurrentLocationAsync = async () => {
+        let { status } = await Permissions.askAsync(Permissions.LOCATION);
+
+        if (status != 'granted') {
+            this.setState({
+                errorMessage: 'To be able to play the game, you have to grant us access to your location.'
+            });
+        }
+
+        let location = await Location.getCurrentPositionAsync({});
+        this.setState({ location });
+    };
 
     render() {
         return(
             <View>
-                { !this.state.ready && 
+                <TouchableOpacity onPress={this.findCurrentLocationAsync}>
+                { !this.state.location && 
                     (<Text style={styles.text}>Location text</Text>) }
-                { this.state.error && 
+                { this.state.errorMessage && 
                 (<Text style={styles.text}>{this.state.error}</Text>) }
-                { this.state.ready && 
+                { this.state.location && 
                 (<Text style={styles.text}>
-                Latitude {this.state.where.lat} Longitude: {this.state.where.lng}</Text>) 
+                Latitude: {this.state.location.coords.latitude} Longitude: {this.state.location.coords.longitude}</Text>) 
                 }
+                </TouchableOpacity>
             </View>
         ); 
     }
 }
+
+export default GeoLocator;
+
 
