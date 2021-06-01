@@ -18,8 +18,8 @@ export default function App() {
       </View>
 
       <View style={styles.huntedButtons}>
-        <Button title={'Hunted'}></Button>
-        <Button title={'Hunter'}></Button>
+        <Button style={styles.hButton} title={'Hunted'}></Button>
+        <Button style={styles.hButton} title={'Hunter'}></Button>
       </View>
       
     </View>

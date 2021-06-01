@@ -24,11 +24,11 @@ export default StyleSheet.create({
     },
     huntedButtons: {
         flex: 2,
-        height: 10,
         width: 150,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        backgroundColor: blue,
     },
     text: {
         color: blue,
