@@ -12,7 +12,7 @@ export const HuntedButton = function () {
             { !click == true &&
                 (<Text style={styles.huntedButtonText}>Hunted</Text>)}
             { click == true &&
-                (<Text style={styles.huntedButtonText}>Hunted</Text>)
+                (<ScreenChanger />)
             }
         </TouchableOpacity>
 
