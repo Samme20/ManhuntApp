@@ -74,5 +74,9 @@ export default StyleSheet.create({
         left:120,
         right:0,
         bottom:0,
-    }
+    },
+    map:{
+        width: Dimensions.get('window').width,
+        height: 300,
+    },
 });
