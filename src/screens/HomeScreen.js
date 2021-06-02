@@ -10,27 +10,34 @@ import GeoLocator from "../scripts/GeoLocator";
 import { HunterButton } from '../assets/buttons/Hunter';
 import { HuntedButton } from '../assets/buttons/Hunted';
 import { Settingsbtn } from '../assets/buttons/Settingsbtn';
-import MapAPI from "../scripts/MapAPI";
-
 
 // MAIN //
-class Main2 extends Component {
+class HomeScreen extends Component {
 
 	render() {
     return(
       <View style = { stylesd.body } >
+        <StatusBar style="auto" />
 
-        <View style={stylesd.content1}>
-          <Text style={stylesd.title}>Google Map API test</Text>
+        <View style={stylesd.topcontent}>
+          <View style={stylesd.content1}>
+          </View>
+          <View style={stylesd.content2}>
+            <Settingsbtn />
+          </View>
         </View>
 
         <View style={stylesd.content1}>
-          <MapAPI />
+          <Text style={stylesd.title}>Fugo</Text>
         </View>
 
+        <View style={stylesd.mainButtons}>
+          <HunterButton />
+          <HuntedButton />
+        </View>
       </View>
     ); 
   }
 }
 
-export default Main2;
+export default HomeScreen;

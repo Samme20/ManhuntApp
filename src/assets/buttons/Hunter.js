@@ -1,9 +1,11 @@
+//Import React
 import React, { useState } from 'react';
 import { Text, View, Button, Linking, TextInput, TouchableOpacity } from 'react-native';
+//Import Expo
+import { Audio } from 'expo-av';
+//Import Files
 import stylesd from "../stylesheets/Styles-dark";
 import stylesl from "../stylesheets/Styles-light";
-import { Audio } from 'expo-av';
-
 
 export const HunterButton = function () {
 
@@ -28,7 +30,7 @@ React.useEffect(() => {
 }, [sound]);
 
     return (
-        <TouchableOpacity style={stylesd.hunterButton} onPress={playSound}>
+        <TouchableOpacity activeOpacity={0.7} style={stylesd.hunterButton} onPress={playSound}>
             <Text style={stylesd.hunterButtonText}>Hunter</Text>
         </TouchableOpacity>
     )

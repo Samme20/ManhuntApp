@@ -7,37 +7,32 @@ import { StatusBar } from 'expo-status-bar';
 import stylesd from "../assets/stylesheets/Styles-dark";
 import stylesl from "../assets/stylesheets/Styles-light";
 import GeoLocator from "../scripts/GeoLocator";
-import { HunterButton } from '../assets/buttons/Hunter';
-import { HuntedButton } from '../assets/buttons/Hunted';
-import { Settingsbtn } from '../assets/buttons/Settingsbtn';
+import MapAPI from "../scripts/MapAPI";
+
 
 // MAIN //
-class MainScreen extends Component {
+class MapTest extends Component {
 
 	render() {
     return(
-      
       <View style = { stylesd.body } >
         <StatusBar style="auto" />
-        <View style={stylesd.content1}>
 
-          <Settingsbtn/>
-          </View>
         <View style={stylesd.content1}>
-          <Text style={stylesd.title}>WorldScape</Text>
+          <Text style={stylesd.title}>Google Map API test</Text>
         </View>
 
         <View style={stylesd.content1}>
           <GeoLocator />
         </View>
 
-        <View style={stylesd.mainButtons}>
-          <HunterButton />
-          <HuntedButton />
+        <View style={stylesd.content1}>
+          <MapAPI />
         </View>
+
       </View>
     ); 
   }
 }
 
-export default MainScreen;
+export default MapTest;

@@ -1,18 +1,19 @@
-import { Text, View, Button, Linking, TextInput, Touchable, TouchableOpacity, Image} from 'react-native';
+//Import React
+import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { Text, Image, TouchableOpacity } from 'react-native';
+//Import Files
 import stylesd from "../stylesheets/Styles-dark";
 import stylesl from "../stylesheets/Styles-light";
-import React, { useState } from 'react';
-
 import settingsimage from "../images/settingsicon-dark.png";
 
 export const Settingsbtn = function () {
-
-    const [click, setClick] = useState(false);
+       
+    const navigation = useNavigation();
 
     return (
-        <TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('Settings')}>
             <Image source={settingsimage} style={stylesd.settingimagestyle}/>
         </TouchableOpacity>
-
     )
 }

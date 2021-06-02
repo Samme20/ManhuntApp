@@ -20,8 +20,25 @@ export default StyleSheet.create({
         borderBottomWidth: 3,
         borderBottomColor: maxred,
     },
+    topcontent: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },    
     content1: {
         flex: 1,
+        justifyContent: 'center',
+    },
+    content2: {
+        paddingLeft: 220,
+        paddingBottom: 50,
+        flex: 1,
+        justifyContent: 'center',
+    },
+    contentmap: {
+        flex: 2,
+        alignItems: 'center',
         justifyContent: 'center',
     },
     mainButtons: {
@@ -67,16 +84,11 @@ export default StyleSheet.create({
         borderRadius: 5,
     },
     settingimagestyle:{
-        width:47,
-        height:47,
-        position:'absolute',
-        top:-40,
-        left:120,
-        right:0,
-        bottom:0,
+        width: 40,
+        height: 40,
     },
     map:{
         width: Dimensions.get('window').width,
-        height: 300,
+        height: Dimensions.get('window').height/3,
     },
 });
