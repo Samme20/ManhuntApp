@@ -12,7 +12,7 @@ export default StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         alignItems: 'center',
-        backgroundColor: lemon,
+        backgroundColor: prusblue,
     },
     title: {
         color: maxred,
@@ -39,7 +39,7 @@ export default StyleSheet.create({
     },
     huntedButtonText: {
         fontSize: 50,
-        color: prusblue,
+        color: lemon,
     },
     hunterButton: {
         margin: 30,
@@ -50,10 +50,10 @@ export default StyleSheet.create({
     },
     hunterButtonText: {
         fontSize: 50,
-        color: prusblue,
+        color: lemon,
     },
     text: {
-        color: prusblue,
+        color: lemon,
         fontSize: 30,
         margin: 10,
     },
@@ -70,7 +70,7 @@ export default StyleSheet.create({
         width:47,
         height:47,
         position:'absolute',
-        top:-50,
+        top:-40,
         left:120,
         right:0,
         bottom:0,
