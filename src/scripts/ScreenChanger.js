@@ -1,15 +1,6 @@
 //Import React
 import React, { Component } from 'react';
 
-
-
-
-// MAIN //
-class ScreenChanger extends Component {
-
-    ChangeingScreen = () => {
-        console.log("awd");
-    }
-    
+export default function ScreenChanger({screen}) {
+    console.log("hello")
 }
-export default ScreenChanger;

@@ -4,14 +4,17 @@ import ScreenChanger from "../../scripts/ScreenChanger";
 import React, { useState } from 'react';
 
 export const HuntedButton = function () {
-    
-    /* ChangeScreen = () => {
-        ScreenChanger.ChangeingScreen;
-    } */
-    
+
+    const [click, setClick] = useState(false);
+
     return (
-        <TouchableOpacity /* onPress={this.ChangeScreen} */ style={styles.huntedButton}>
-            <Text style={styles.huntedButtonText}>Hunted</Text>
+        <TouchableOpacity style={styles.huntedButton}>
+            { !click == true &&
+                (<Text style={styles.huntedButtonText}>Hunted</Text>)}
+            { click == true &&
+                (<Text style={styles.huntedButtonText}>Hunted</Text>)
+            }
         </TouchableOpacity>
+
     )
 }
