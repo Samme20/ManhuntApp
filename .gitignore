@@ -7,6 +7,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+.expo/packager-info.json
 
 # macOS
 .DS_Store
@@ -66,7 +67,7 @@ buck-out/
 /ios/Pods/
 
 # Expo
-.expo/
+.expo
 web-build/
 
 # @end expo-cli
