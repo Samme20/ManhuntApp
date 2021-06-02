@@ -1,18 +1,16 @@
 import { Text, View, Button, Linking, TextInput, Touchable, TouchableOpacity } from 'react-native';
 import styles from "../stylesheets/Styles";
 import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+
 
 export const HuntedButton = function () {
 
-    const [click, setClick] = useState(false);
+    const navigation = useNavigation();
 
     return (
-        <TouchableOpacity style={styles.huntedButton}>
-            { !click == true &&
-                (<Text style={styles.huntedButtonText}>Hunted</Text>)}
-            { click == true &&
-                (<ScreenChanger />)
-            }
+        <TouchableOpacity style={styles.huntedButton}onPress={() => navigation.navigate('Test')}>
+            <Text style={styles.huntedButtonText}>Hunted</Text>
         </TouchableOpacity>
 
     )
