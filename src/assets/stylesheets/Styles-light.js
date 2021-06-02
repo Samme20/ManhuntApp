@@ -1,4 +1,4 @@
-import { StyleSheet, Button } from 'react-native';
+import { StyleSheet, Button, Dimensions } from 'react-native';
 
 
 //Main theme colors
