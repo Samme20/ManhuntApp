@@ -1,6 +1,7 @@
 //Import React
 import React, { Component } from 'react';
 import { View, Text, Button, Permission, TouchableOpacity } from 'react-native';
+import * as Permissions from 'expo-permissions';
 import * as Location from 'expo-location';
 //Import Files
 import styles from "../assets/stylesheets/Styles";
@@ -30,7 +31,7 @@ class GeoLocator extends Component {
     };
     
     findCurrentLocationAsync = async () => {
-        let { status } = await Location.requestPermissionsAsync;
+        let { status } = await Permissions.askAsync(Permissions.LOCATION);
 
         if (status != 'granted') {
             this.setState({
