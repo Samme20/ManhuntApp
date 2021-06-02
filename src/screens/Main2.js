@@ -11,7 +11,7 @@ import { HuntedButton } from '../assets/buttons/Hunted';
 import { Settingsbtn } from '../assets/buttons/Settingsbtn';
 
 // MAIN //
-class MainScreen extends Component {
+class Main2 extends Component {
 
 	render() {
     return(
@@ -19,11 +19,10 @@ class MainScreen extends Component {
       <View style = { styles.body } >
         <StatusBar style="auto" />
         <View style={styles.content1}>
-
           <Settingsbtn/>
           </View>
         <View style={styles.content1}>
-          <Text style={styles.title}>WorldScape</Text>
+          <Text style={styles.title}>WUBALAUB</Text>
         </View>
 
         <View style={styles.content1}>
@@ -39,4 +38,4 @@ class MainScreen extends Component {
   }
 }
 
-export default MainScreen;
+export default Main2;

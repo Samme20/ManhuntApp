@@ -1,6 +1,5 @@
 import { Text, View, Button, Linking, TextInput, TouchableOpacity } from 'react-native';
 import styles from "../stylesheets/Styles";
-import ScreenChanger from "../../scripts/ScreenChanger";
 import React, { useState } from 'react';
 import { Audio } from 'expo-av';
 
