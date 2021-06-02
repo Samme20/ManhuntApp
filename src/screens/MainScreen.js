@@ -8,16 +8,19 @@ import styles from '../assets/stylesheets/Styles';
 import GeoLocator from "../scripts/GeoLocator";
 import { HunterButton } from '../assets/buttons/Hunter';
 import { HuntedButton } from '../assets/buttons/Hunted';
-
+import { Settingsbtn } from '../assets/buttons/Settingsbtn';
 
 // MAIN //
 class MainScreen extends Component {
 
 	render() {
     return(
+      
       <View style = { styles.body } >
         <StatusBar style="auto" />
-
+        <View style={styles.content1}>
+          <Settingsbtn/>
+          </View>
         <View style={styles.content1}>
           <Text style={styles.title}>WorldScape</Text>
         </View>

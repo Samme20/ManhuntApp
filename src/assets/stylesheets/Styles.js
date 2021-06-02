@@ -66,4 +66,13 @@ export default StyleSheet.create({
         borderWidth: 2,
         borderRadius: 5,
     },
+    settingimagestyle:{
+        width:47,
+        height:47,
+        position:'absolute',
+        top:-50,
+        left:120,
+        right:0,
+        bottom:0,
+    }
 });

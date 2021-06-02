@@ -13,7 +13,7 @@ export const HunterButton = function () {
 async function playSound() {
   console.log('Loading Sound');
   const { sound } = await Audio.Sound.createAsync(
-     require('./forever.mp3')
+     require('../sounds/forever.mp3')
   );
   setSound(sound);
 

@@ -1,16 +1,18 @@
-import { Text, View, Button, Linking, TextInput, Touchable, TouchableOpacity } from 'react-native';
+import { Text, View, Button, Linking, TextInput, Touchable, TouchableOpacity, Image} from 'react-native';
 import styles from "../stylesheets/Styles";
 import ScreenChanger from "../../scripts/ScreenChanger";
 import React, { useState } from 'react';
 
-export const HuntedButton = function () {
+import settingsimage from "../images/settingsicon.png";
+
+export const Settingsbtn = function () {
 
     const [click, setClick] = useState(false);
 
     return (
-        <TouchableOpacity style={styles.huntedButton}>
+        <TouchableOpacity>
             { !click == true &&
-                (<Text style={styles.huntedButtonText}>Hunted</Text>)}
+                (<Image source={settingsimage} style={styles.settingimagestyle}/>)}
             { click == true &&
                 (<ScreenChanger />)
             }
