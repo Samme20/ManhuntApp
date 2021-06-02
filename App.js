@@ -17,7 +17,9 @@ export default class App extends Component {
 	render() {
     return(
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Home'>
+        <Stack.Navigator initialRouteName='Home'screenOptions={{
+    headerShown: false
+  }}>
           <Stack.Screen name="Home" component={MainScreen}/>
           <Stack.Screen name="Test" component={Main2}/>
         </Stack.Navigator>
