@@ -31,7 +31,7 @@ class GeoLocator extends Component {
     };
     
     findCurrentLocationAsync = async () => {
-        let { status } = await Permissions.askAsync(Permissions.LOCATION);
+        let { status } = await Location.requestForegroundPermissionsAsync();
 
         if (status != 'granted') {
             this.setState({
