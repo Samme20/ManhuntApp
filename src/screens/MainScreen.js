@@ -4,7 +4,8 @@ import { View, Text, Button } from 'react-native';
 //Import Expo
 import { StatusBar } from 'expo-status-bar';
 //Import Files
-import styles from '../assets/stylesheets/Styles';
+import stylesd from "../assets/stylesheets/Styles-dark";
+import stylesl from "../assets/stylesheets/Styles-light";
 import GeoLocator from "../scripts/GeoLocator";
 import { HunterButton } from '../assets/buttons/Hunter';
 import { HuntedButton } from '../assets/buttons/Hunted';
@@ -16,21 +17,21 @@ class MainScreen extends Component {
 	render() {
     return(
       
-      <View style = { styles.body } >
+      <View style = { stylesd.body } >
         <StatusBar style="auto" />
-        <View style={styles.content1}>
+        <View style={stylesd.content1}>
 
           <Settingsbtn/>
           </View>
-        <View style={styles.content1}>
-          <Text style={styles.title}>WorldScape</Text>
+        <View style={stylesd.content1}>
+          <Text style={stylesd.title}>WorldScape</Text>
         </View>
 
-        <View style={styles.content1}>
+        <View style={stylesd.content1}>
           <GeoLocator />
         </View>
 
-        <View style={styles.mainButtons}>
+        <View style={stylesd.mainButtons}>
           <HunterButton />
           <HuntedButton />
         </View>

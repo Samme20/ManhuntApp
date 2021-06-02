@@ -1,8 +1,8 @@
-import { Text, View, Button, Linking, TextInput, TouchableOpacity } from 'react-native';
-import styles from "../stylesheets/Styles";
 import React, { useState } from 'react';
+import { Text, View, Button, Linking, TextInput, TouchableOpacity } from 'react-native';
+import stylesd from "../stylesheets/Styles-dark";
+import stylesl from "../stylesheets/Styles-light";
 import { Audio } from 'expo-av';
-
 
 
 export const HunterButton = function () {
@@ -28,8 +28,8 @@ React.useEffect(() => {
 }, [sound]);
 
     return (
-        <TouchableOpacity style={styles.hunterButton} onPress={playSound}>
-            <Text style={styles.hunterButtonText}>Hunter</Text>
+        <TouchableOpacity style={stylesd.hunterButton} onPress={playSound}>
+            <Text style={stylesd.hunterButtonText}>Hunter</Text>
         </TouchableOpacity>
     )
 }

@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { View, Text, Button, Permission, TouchableOpacity } from 'react-native';
 import * as Location from 'expo-location';
 //Import Files
-import styles from "../assets/stylesheets/Styles";
+import stylesd from "../assets/stylesheets/Styles-dark";
+import stylesl from "../assets/stylesheets/Styles-light";
 
 class GeoLocator extends Component {
     constructor() {
@@ -47,11 +48,11 @@ class GeoLocator extends Component {
             <View>
                 <TouchableOpacity onPress={this.findCurrentLocationAsync}>
                 { !this.state.location && 
-                    (<Text style={styles.text}>Location text</Text>) }
+                    (<Text style={stylesd.text}>Location text</Text>) }
                 { this.state.errorMessage && 
-                (<Text style={styles.text}>{this.state.error}</Text>) }
+                (<Text style={stylesd.text}>{this.state.error}</Text>) }
                 { this.state.location && 
-                (<Text style={styles.text}>
+                (<Text style={stylesd.text}>
                 Latitude: {this.state.location.coords.latitude} Longitude: {this.state.location.coords.longitude}</Text>) 
                 }
                 </TouchableOpacity>
