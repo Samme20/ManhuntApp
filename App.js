@@ -17,11 +17,9 @@ export default class App extends Component {
 	render() {
     return(
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Home'screenOptions={{
-    headerShown: false
-  }}>
-          <Stack.Screen name="Home" component={MainScreen}/>
-          <Stack.Screen name="Test" component={Main2}/>
+        <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
+          <Stack.Screen name="Home" component={MainScreen} options={{animationEnabled:false}}/>
+          <Stack.Screen name="Test" component={Main2} options={{animationEnabled:false}}/>
         </Stack.Navigator>
       </NavigationContainer>
     ); 
