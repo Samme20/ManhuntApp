@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { View, Text, Button, Permission, TouchableOpacity } from 'react-native';
 import MapView from 'react-native-maps';
 //Import Files
-import stylesd from "../assets/stylesheets/Styles-dark";
-import stylesl from "../assets/stylesheets/Styles-light";
+import stylesd from "../assets/stylesheets/Styles-darkold";
+import stylesl from "../assets/stylesheets/Styles-lightold";
 
 class GeoLocator extends Component {
     render() {

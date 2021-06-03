@@ -4,8 +4,8 @@ import { View, Text, Button } from 'react-native';
 //Import Expo
 import { StatusBar } from 'expo-status-bar';
 //Import Files
-import stylesd from "../assets/stylesheets/Styles-dark";
-import stylesl from "../assets/stylesheets/Styles-light";
+import stylesd from "../assets/stylesheets/Styles-darkold";
+import stylesl from "../assets/stylesheets/Styles-lightold";
 import GeoLocator from "../scripts/GeoLocator";
 import MapAPI from "../scripts/MapAPI";
 

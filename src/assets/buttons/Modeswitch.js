@@ -2,12 +2,13 @@
 import React, {useState} from 'react';
 import { Text, Image, TouchableOpacity ,Switch, AsyncStorage } from 'react-native';
 //Import Files
-import stylesd from "../stylesheets/Styles-dark";
+import stylesd from "../stylesheets/Styles-darkold";
+import stylesl from "../stylesheets/Styles-lightold";
 import config  from '../../../Config.json';
 
 
 
-export const Modeswitch = function () {
+const Modeswitch = function () {
     const [isEnabled, setIsEnabled] = useState(config.dark);
     const toggleSwitch = () => {
         setIsEnabled(previousState => !previousState);
@@ -28,3 +29,5 @@ export const Modeswitch = function () {
       />
     )
 }
+
+export default Modeswitch;
