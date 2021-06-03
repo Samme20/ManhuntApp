@@ -11,6 +11,8 @@ import { HunterButton } from '../assets/buttons/Hunter';
 import { HuntedButton } from '../assets/buttons/Hunted';
 import { Settingsbtn } from '../assets/buttons/Settingsbtn';
 
+
+
 // MAIN //
 class HomeScreen extends Component {
 

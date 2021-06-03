@@ -27,6 +27,10 @@ export default StyleSheet.create({
         color: "rgba(247,127,0,1)",
         fontSize: 61
       },
+      darklightmodeswitch: {
+        width: 45,
+        height: 23
+      },
     topcontent: {
         flex: 1,
         flexDirection: 'row',

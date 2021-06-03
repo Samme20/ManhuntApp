@@ -8,6 +8,8 @@ import Icon from "react-native-vector-icons/Entypo";
 import stylesd from "../assets/stylesheets/Styles-dark";
 import stylesl from "../assets/stylesheets/Styles-light";
 import { Settingsbackbtn } from '../assets/buttons/Settingsbackbtn';
+import { Modeswitch } from '../assets/buttons/Modeswitch';
+import config  from '../../Config.json';
 
 // MAIN //
 class Settings extends Component {
@@ -18,12 +20,12 @@ class Settings extends Component {
       <View style={styles.darkLightModeRow}>
         <Text style={styles.darkLightMode}>Dark/Light Mode</Text>
         <View style={styles.darkLightModeFiller}></View>
-        <Switch style={styles.cupertinoSwitch}></Switch>
+        <Modeswitch style={styles.cupertinoSwitch}></Modeswitch>
       </View>
       <View style={styles.rect1Stack}>
         <View style={styles.rect1}></View>
         <Text style={styles.settings}>Settings</Text>
-        <Settingsbackbtn name="chevron-left" style={styles.icon}></Settingsbackbtn>
+        <Settingsbackbtn style={styles.icon}></Settingsbackbtn>
       </View>
     </View>
     ); 
@@ -37,9 +39,8 @@ const styles = StyleSheet.create({
     borderColor: "#000000"
   },
   darkLightMode: {
-    fontFamily: "roboto-700",
-    color: "#121212",
-    height: 19,
+    color: "#EAE2B7",
+    height: 25,
     width: 162,
     fontSize: 20,
     marginTop: 2
@@ -48,10 +49,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row"
   },
-  cupertinoSwitch: {
-    width: 45,
-    height: 23
-  },
+  
   darkLightModeRow: {
     height: 23,
     flexDirection: "row",
@@ -65,7 +63,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     backgroundColor: "rgba(0,48,73,1)",
     borderWidth: 0,
-    borderColor: "#000000",
+    borderColor: "#EAE2B7",
     borderTopWidth: 0,
     left: 0,
     borderRightWidth: 0,
@@ -76,8 +74,7 @@ const styles = StyleSheet.create({
   settings: {
     top: 12,
     position: "absolute",
-    fontFamily: "roboto-700",
-    color: "#121212",
+    color: "#EAE2B7",
     fontSize: 30,
     left: 2,
     right: 0,
