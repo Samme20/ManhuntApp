@@ -20,6 +20,13 @@ export default StyleSheet.create({
         borderBottomWidth: 3,
         borderBottomColor: maxred,
     },
+    backicon: {
+        top: 0,
+        left: 13,
+        position: "absolute",
+        color: "rgba(247,127,0,1)",
+        fontSize: 61
+      },
     topcontent: {
         flex: 1,
         flexDirection: 'row',

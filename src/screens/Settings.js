@@ -7,6 +7,7 @@ import Icon from "react-native-vector-icons/Entypo";
 //Import Files
 import stylesd from "../assets/stylesheets/Styles-dark";
 import stylesl from "../assets/stylesheets/Styles-light";
+import { Settingsbackbtn } from '../assets/buttons/Settingsbackbtn';
 
 // MAIN //
 class Settings extends Component {
@@ -22,7 +23,7 @@ class Settings extends Component {
       <View style={styles.rect1Stack}>
         <View style={styles.rect1}></View>
         <Text style={styles.settings}>Settings</Text>
-        <Icon name="chevron-left" style={styles.icon}></Icon>
+        <Settingsbackbtn name="chevron-left" style={styles.icon}></Settingsbackbtn>
       </View>
     </View>
     ); 
