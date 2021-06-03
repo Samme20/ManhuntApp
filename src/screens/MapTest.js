@@ -26,10 +26,6 @@ class MapTest extends Component {
           <GeoLocator />
         </View>
 
-        <View style={stylesd.content1}>
-          <MapAPI />
-        </View>
-
       </View>
     ); 
   }

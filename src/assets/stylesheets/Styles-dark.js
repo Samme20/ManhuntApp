@@ -29,6 +29,7 @@ export default StyleSheet.create({
     content1: {
         flex: 1,
         justifyContent: 'center',
+        height: Dimensions.get('window').height / 2,
     },
     content2: {
         paddingLeft: 220,
@@ -89,6 +90,6 @@ export default StyleSheet.create({
     },
     map:{
         width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height/3,
+        height: Dimensions.get('window').height / 2,
     },
 });
