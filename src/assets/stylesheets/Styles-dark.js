@@ -46,6 +46,12 @@ export default StyleSheet.create({
         fontSize: 40,
         alignSelf: "center"
     },
+    username: {
+        color: lemon,
+        fontSize: 24,
+        alignSelf: "center",
+        flex: 1
+      },
     button2: {
         width: 41,
         height: 44,
@@ -129,6 +135,66 @@ export default StyleSheet.create({
         alignItems: "center",
         justifyContent: "center"
     },
+    pictureForm: {
+        height: 229,
+        justifyContent: "space-around",
+        alignItems: "flex-start",
+        flex: 0.14,
+        width: 292,
+        marginTop: 79,
+        marginLeft: 44,
+        marginRight: 45
+      },
+      userPicture: {
+        width: 160,
+        height: 160,
+        alignSelf: "center"
+      },
+      pictureButton: {
+        height: 36,
+        width: 292,
+        flexDirection: "row",
+        alignSelf: "center",
+        justifyContent: "space-between",
+        alignItems: "center"
+      },
+      changePicture: {
+        color: lemon,
+        fontSize: 18,
+        height: 22,
+        width: 127
+      },
+      cameraIcon: {
+        color: lemon,
+        fontSize: 25
+      },
+      userForm: {
+        height: 402,
+        justifyContent: "space-around",
+        alignItems: "flex-start",
+        flex: 0.14,
+        width: 292,
+        marginLeft: 44,
+        marginRight: 45
+      },
+      privacyButton: {
+        height: 22,
+        width: 292,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        alignSelf: "center"
+      },
+      privacySettings: {
+        color: lemon,
+        fontSize: 18,
+        height: 22,
+        width: 127
+      },
+      rightArrow: {
+        color: lemon,
+        fontSize: 25
+      },
     backIcon: {
         color: lemon,
         fontSize: 40

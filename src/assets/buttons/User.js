@@ -11,7 +11,7 @@ const Settingsbtn = function () {
     const navigation = useNavigation();
 
     return (
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('User')}>
             <FontAwesomeIcon
                 name="user-circle"
                 style={styles.user}
