@@ -10,11 +10,12 @@ var black = "#121212";
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: prusblue
+        backgroundColor: prusblue,
+        width: Dimensions.get('window').width,
     },
     background: {
-        height: 896,
-        width: 414
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width
     },
     backgroundGradient: {
         flex: 1
@@ -24,7 +25,8 @@ export default StyleSheet.create({
         height: 40,
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center"
+        alignItems: "center",
+        width: Dimensions.get('window').width - 30 //verkar som att skärmen är 30 l.e för stor eller liknande...
     },
     titleHelper: {
         top: 0,
