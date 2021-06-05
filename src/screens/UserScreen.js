@@ -25,7 +25,7 @@ class UserScreen extends Component {
             <View style={styles.headerColumn}>
               <View style={styles.header}>
                 <View style={styles.titleHelper}>
-                  <Text style={styles.username}>{"{"}Username}</Text>
+                  <Text style={styles.username}>{"{Username}"}</Text>
                 </View>
                 <BackButton />
               </View>

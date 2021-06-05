@@ -18,7 +18,8 @@ export default StyleSheet.create({
         width: Dimensions.get('window').width
     },
     backgroundGradient: {
-        flex: 1
+        flex: 1,
+        height: Dimensions.get('window').height
     },
     backgroundGradient_imageStyle: {},
     header: {

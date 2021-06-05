@@ -6,7 +6,7 @@ import MapView from 'react-native-maps';
 import stylesd from "../assets/stylesheets/Styles-darkold";
 import stylesl from "../assets/stylesheets/Styles-lightold";
 
-class GeoLocator extends Component {
+class GeoLocator extends Component { //Varför har denna samma som GeoLocator när den hete MapAPI=???
     render() {
         return (
             <View style={stylesd.contentmap}>
