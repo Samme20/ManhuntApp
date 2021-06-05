@@ -2,17 +2,15 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/Entypo";
 //Import Files
 
-const HuntedButton = function () {
+const LoginButton = function () {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity
-      style={styles.huntedButton}
-      onPress={() => navigation.navigate("MapTest")}
-    >
-      <Text style={styles.hunted}>Hunted</Text>
+    <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate("Main")}>
+      <Text style={styles.loginText}>Login</Text>
     </TouchableOpacity>
   );
 };
@@ -26,19 +24,21 @@ var orange = "#F77F00";
 var black = "#121212";
 
 const styles = StyleSheet.create({
-  huntedButton: {
-    width: 200,
-    height: 54,
+  loginButton: {
+    height: 47,
+    alignSelf: "stretch",
+    backgroundColor: "rgba(230, 230, 230,0.25)",
+    borderRadius: 6,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 6,
-    backgroundColor: orange,
   },
-  hunted: {
+  loginText: {
     color: lemon,
-    fontSize: 24,
+    fontSize: 18,
+    height: 24,
+    width: 45,
   },
 });
 
-export default HuntedButton;
+export default LoginButton;

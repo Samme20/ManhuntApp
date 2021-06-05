@@ -1,11 +1,17 @@
 //Ipmort React
 import React, { Component } from "react";
-import { StyleSheet, View, ImageBackground, Text, TouchableOpacity, Switch } from "react-native";
+import {
+  StyleSheet,
+  View,
+  ImageBackground,
+  Text,
+  TouchableOpacity,
+  Switch,
+} from "react-native";
 import BackButton from "../assets/buttons/BackButton";
+import Modeswitch from "../assets/buttons/Modeswitch";
 //Import Files
 import Gradient from "../assets/images/backgroundGradient.png";
-import styles from "../assets/stylesheets/Styles-dark";
-
 class Settings extends Component {
   render() {
     return (
@@ -23,22 +29,10 @@ class Settings extends Component {
                 </View>
                 <BackButton />
               </View>
-              <View style={styles.form1Stack}>
-                <View style={styles.form1}></View>
-                <View style={styles.settingForm}>
+              <View style={styles.settingForm}>
+                <View style={styles.darkModeSetting}>
                   <Text style={styles.darkMode}>Dark mode</Text>
-                </View>
-                <View style={styles.valueForm}>
-                  <Switch
-                    value={true}
-                    disabled={false}
-                    trackColor={{
-                      true: "rgba(0,48,73,1)",
-                      false: "rgba(234,226,183,1)"
-                    }}
-                    thumbColor="rgba(247,127,0,1)"
-                    style={styles.switch}
-                  ></Switch>
+                  <Modeswitch />
                 </View>
               </View>
             </View>
@@ -55,5 +49,110 @@ class Settings extends Component {
     );
   }
 }
+
+// STYLES FOR SCREEN
+
+var lemon = "#EAE2B7";
+var maxred = "#D62828";
+var prusblue = "#003049";
+var orange = "#F77F00";
+var black = "#121212";
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: prusblue,
+  },
+  background: {
+    flex: 1,
+  },
+  backgroundGradient: {
+    flex: 1,
+  },
+  backgroundGradient_imageStyle: {},
+  header: {
+    height: 40,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  titleHelper: {
+    top: 0,
+    left: 0,
+    position: "absolute",
+    right: 0,
+    bottom: 0,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    color: lemon,
+    fontSize: 24,
+    alignSelf: "flex-start",
+  },
+  backButton: {
+    flexDirection: "row",
+    width: 40,
+    height: 44,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  backIcon: {
+    color: lemon,
+    fontSize: 40,
+  },
+  settingForm: {
+    height: 647,
+    justifyContent: "space-around",
+    marginTop: 39,
+    marginLeft: 44,
+    marginRight: 45,
+  },
+  darkModeSetting: {
+    height: 25,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignSelf: "stretch",
+  },
+  darkMode: {
+    color: lemon,
+    fontSize: 18,
+    height: 22,
+    width: 87,
+  },
+  switch: {},
+  headerColumn: {
+    marginTop: 62,
+    marginLeft: 17,
+    marginRight: 16,
+  },
+  headerColumnFiller: {
+    flex: 1,
+  },
+  footer: {
+    flexDirection: "row",
+    height: 20,
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 30,
+    marginLeft: 37,
+    marginRight: 37,
+  },
+  fugo2021: {
+    color: black,
+    alignSelf: "center",
+  },
+  helpButton: {
+    flexDirection: "row",
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  help: {
+    color: black,
+    alignSelf: "flex-start",
+  },
+});
 
 export default Settings;

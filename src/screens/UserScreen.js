@@ -4,16 +4,15 @@ import {
   View,
   ImageBackground,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import Svg, { Ellipse } from "react-native-svg";
-import styles from "../assets/stylesheets/Styles-dark";
 import Gradient from "../assets/images/backgroundGradient.png";
 import BackButton from "../assets/buttons/BackButton";
 
 class UserScreen extends Component {
-  render(){
+  render() {
     return (
       <View style={styles.container}>
         <View style={styles.background}>
@@ -73,5 +72,150 @@ class UserScreen extends Component {
   }
 }
 
-export default UserScreen;
+// STYLES FOR SCREEN
 
+var lemon = "#EAE2B7";
+var maxred = "#D62828";
+var prusblue = "#003049";
+var orange = "#F77F00";
+var black = "#121212";
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: prusblue,
+  },
+  background: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    flex: 1,
+  },
+  backgroundGradient: {
+    flex: 1,
+    height: 896,
+    width: 414,
+  },
+  backgroundGradient_imageStyle: {},
+  header: {
+    top: 62,
+    height: 40,
+    position: "absolute",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    left: 17,
+    right: 16,
+    flex: 0.14,
+  },
+  titleHelper: {
+    top: 0,
+    left: 0,
+    position: "absolute",
+    right: 0,
+    bottom: 0,
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  username: {
+    color: lemon,
+    fontSize: 24,
+    flex: 1,
+    alignSelf: "center",
+    textAlign: "center",
+  },
+  backButton: {
+    flexDirection: "row",
+    width: 40,
+    height: 44,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  backIcon: {
+    color: lemon,
+    fontSize: 40,
+  },
+  pictureForm: {
+    top: 162,
+    left: 61,
+    height: 286,
+    position: "absolute",
+    justifyContent: "space-around",
+    alignItems: "flex-start",
+    flex: 0.14,
+    right: 61,
+  },
+  userPicture: {
+    width: 160,
+    height: 160,
+    alignSelf: "center",
+  },
+  pictureButton: {
+    height: 36,
+    flexDirection: "row",
+    alignSelf: "stretch",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  changePicture: {
+    color: lemon,
+    fontSize: 18,
+    height: 22,
+    width: 127,
+  },
+  cameraIcon: {
+    color: lemon,
+    fontSize: 25,
+  },
+  userForm: {
+    left: 61,
+    position: "absolute",
+    justifyContent: "flex-start",
+    flex: 0.14,
+    height: 362,
+    right: 61,
+    top: 448,
+  },
+  privacyButton: {
+    height: 22,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignSelf: "stretch",
+  },
+  privacySettings: {
+    color: lemon,
+    fontSize: 18,
+    height: 22,
+    width: 127,
+  },
+  rightArrow: {
+    color: lemon,
+    fontSize: 20,
+  },
+  footer: {
+    left: 37,
+    position: "absolute",
+    flexDirection: "row",
+    height: 20,
+    alignItems: "center",
+    justifyContent: "space-between",
+    right: 37,
+    bottom: 30,
+    flex: 0.14,
+  },
+  fugo2021: {
+    color: black,
+    alignSelf: "center",
+  },
+  helpButton: {
+    flexDirection: "row",
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  help: {
+    color: black,
+    alignSelf: "flex-start",
+  },
+});
+
+export default UserScreen;

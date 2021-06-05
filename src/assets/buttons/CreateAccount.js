@@ -4,15 +4,12 @@ import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 //Import Files
 
-const HuntedButton = function () {
+const CreateAccount = function () {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity
-      style={styles.huntedButton}
-      onPress={() => navigation.navigate("MapTest")}
-    >
-      <Text style={styles.hunted}>Hunted</Text>
+    <TouchableOpacity style={styles.signUp}>
+      <Text style={styles.createAnAccount}>Create An Account</Text>
     </TouchableOpacity>
   );
 };
@@ -26,19 +23,20 @@ var orange = "#F77F00";
 var black = "#121212";
 
 const styles = StyleSheet.create({
-  huntedButton: {
-    width: 200,
-    height: 54,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+  signUp: {
+    height: 47,
+    alignSelf: "stretch",
+    backgroundColor: "rgba(230, 230, 230,0.25)",
     borderRadius: 6,
-    backgroundColor: orange,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  hunted: {
+  createAnAccount: {
     color: lemon,
-    fontSize: 24,
+    fontSize: 18,
+    height: 24,
+    width: 151,
   },
 });
 
-export default HuntedButton;
+export default CreateAccount;
