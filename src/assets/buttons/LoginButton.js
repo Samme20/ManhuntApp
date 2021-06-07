@@ -9,7 +9,10 @@ const LoginButton = function () {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate("Main")}>
+    <TouchableOpacity
+      style={styles.loginButton}
+      onPress={() => navigation.navigate("Main")}
+    >
       <Text style={styles.loginText}>Login</Text>
     </TouchableOpacity>
   );

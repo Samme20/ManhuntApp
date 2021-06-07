@@ -7,7 +7,6 @@ import Icon from "react-native-vector-icons/Entypo";
 
 const BackButton = function () {
   const navigation = useNavigation();
-
   return (
     <TouchableOpacity
       style={styles.backButton}

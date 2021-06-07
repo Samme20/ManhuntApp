@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   fugoLogo: {
     height: 279,
     marginTop: 80,
-    marginHorizontal: -30
+    marginHorizontal: -30,
   },
   form: {
     height: 229,

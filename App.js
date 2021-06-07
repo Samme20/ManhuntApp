@@ -10,6 +10,7 @@ import MapTest from './src/screens/MapTest';
 import Settings from './src/screens/Settings';
 import UserScreen from './src/screens/UserScreen';
 import LoginScreen from './src/screens/LoginScreen';
+import LobbyScreen from './src/screens/LobbyScreen';
 
 // MAIN //
 const Stack = createStackNavigator();
@@ -24,6 +25,7 @@ export default class App extends Component {
           <Stack.Screen name="Settings" component={Settings} options={{animationEnabled:false}}/>
           <Stack.Screen name="User" component={UserScreen} options={{animationEnabled:false}}/>
           <Stack.Screen name="Login" component={LoginScreen} options={{animationEnabled:false}}/>
+          <Stack.Screen name="Lobby" component={LobbyScreen} options={{animationEnabled:false}}/>
         </Stack.Navigator>
       </NavigationContainer>
     ); 

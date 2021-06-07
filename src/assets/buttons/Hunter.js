@@ -1,5 +1,6 @@
 //Import React
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import {
   StyleSheet,
   Text,
@@ -14,6 +15,7 @@ import { Audio } from "expo-av";
 //Import Files
 
 const HunterButton = function () {
+  const navigation = useNavigation();
   const [sound, setSound] = React.useState();
 
   async function playSound() {
@@ -37,7 +39,10 @@ const HunterButton = function () {
   }, [sound]);
 
   return (
-    <TouchableOpacity style={styles.hunterButton} onPress={playSound}>
+    <TouchableOpacity
+      style={styles.hunterButton}
+      onPress={() => navigation.navigate("Lobby")}
+    >
       <Text style={styles.hunter}>Hunter</Text>
     </TouchableOpacity>
   );
