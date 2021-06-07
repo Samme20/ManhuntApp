@@ -34,8 +34,6 @@ const styles = StyleSheet.create({
   createAnAccount: {
     color: lemon,
     fontSize: 18,
-    height: 24,
-    width: 151,
   },
 });
 

@@ -79,8 +79,8 @@ const styles = StyleSheet.create({
   backgroundGradient_imageStyle: {},
   fugoLogo: {
     height: 279,
-    marginTop: 70,
-    marginLeft: 40,
+    marginTop: 80,
+    marginHorizontal: -30
   },
   form: {
     height: 229,

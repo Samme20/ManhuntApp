@@ -36,8 +36,6 @@ const styles = StyleSheet.create({
   loginText: {
     color: lemon,
     fontSize: 18,
-    height: 24,
-    width: 45,
   },
 });
 
