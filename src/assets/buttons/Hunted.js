@@ -5,7 +5,7 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 //Import Files
 
 const HuntedButton = function () {
-  
+  const navigation = useNavigation();
 
   return (
     <TouchableOpacity
