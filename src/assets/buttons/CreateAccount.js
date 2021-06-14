@@ -8,7 +8,10 @@ const CreateAccount = function () {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.signUp}>
+    <TouchableOpacity
+      style={styles.signUp}
+      onPress={() => navigation.navigate("Register")}
+    >
       <Text style={styles.createAnAccount}>Create An Account</Text>
     </TouchableOpacity>
   );

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import {
   StyleSheet,
   View,
@@ -12,50 +12,52 @@ import CreateAccount from "../assets/buttons/CreateAccount";
 import LoginButton from "../assets/buttons/LoginButton";
 import Gradient from "../assets/images/backgroundGradient.png";
 
-class Login extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.background}>
-          <ImageBackground
-            style={styles.backgroundGradient}
-            imageStyle={styles.backgroundGradient_imageStyle}
-            source={Gradient}
-          >
-            <Image
-              source={require("../assets/images/fugologo-dark.png")}
-              resizeMode="contain"
-              style={styles.fugoLogo}
-            ></Image>
-            <View style={styles.form}>
-              <View style={styles.email}>
-                <TextInput
-                  placeholder="Email"
-                  style={styles.emailInput}
-                ></TextInput>
-              </View>
-              <View style={styles.password}>
-                <TextInput
-                  placeholder="Password"
-                  secureTextEntry={true}
-                  style={styles.passwordInput}
-                ></TextInput>
-              </View>
-              <LoginButton />
-              <CreateAccount />
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  return (
+    <View style={styles.container}>
+      <View style={styles.background}>
+        <ImageBackground
+          style={styles.backgroundGradient}
+          imageStyle={styles.backgroundGradient_imageStyle}
+          source={Gradient}
+        >
+          <Image
+            source={require("../assets/images/fugologo-dark.png")}
+            resizeMode="contain"
+            style={styles.fugoLogo}
+          ></Image>
+          <View style={styles.form}>
+            <View style={styles.email}>
+              <TextInput
+                placeholder="Email"
+                style={styles.emailInput}
+                onChangeText={text => setEmail(text)}
+              ></TextInput>
             </View>
-            <View style={styles.footer}>
-              <Text style={styles.fugo2021}>© Fugo 2021</Text>
-              <TouchableOpacity style={styles.button4}>
-                <Text style={styles.help}>Need Help?</Text>
-              </TouchableOpacity>
+            <View style={styles.password}>
+              <TextInput
+                placeholder="Password"
+                secureTextEntry={true}
+                style={styles.passwordInput}
+                onChangeText={text => setPassword(text)}
+              ></TextInput>
             </View>
-          </ImageBackground>
-        </View>
+            <LoginButton />
+            <CreateAccount />
+          </View>
+          <View style={styles.footer}>
+            <Text style={styles.fugo2021}>© Fugo 2021</Text>
+            <TouchableOpacity style={styles.button4}>
+              <Text style={styles.help}>Need Help?</Text>
+            </TouchableOpacity>
+          </View>
+        </ImageBackground>
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 
 // STYLE FOR SCREEN
 
