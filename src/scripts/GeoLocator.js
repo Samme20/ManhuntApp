@@ -8,6 +8,7 @@ import stylesd from "../assets/stylesheets/Styles-darkold";
 import stylesl from "../assets/stylesheets/Styles-lightold";
 
 import MapView, { Marker } from "react-native-maps";
+import { getNativeSourceAndFullInitialStatusForLoadAsync } from "expo-av/build/AV";
 
 class GeoLocator extends Component {
   constructor() {
@@ -53,8 +54,7 @@ class GeoLocator extends Component {
   };
 
   goBack = () => {
-    const navigation = useNavigation();
-    navigation.navigate("MapTest");
+    this.setState({location: null})
   }
 
   render() {
