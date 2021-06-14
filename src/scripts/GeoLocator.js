@@ -7,8 +7,9 @@ import { useNavigation } from "@react-navigation/native";
 import stylesd from "../assets/stylesheets/Styles-darkold";
 import stylesl from "../assets/stylesheets/Styles-lightold";
 
-import MapView, { Marker } from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import { getNativeSourceAndFullInitialStatusForLoadAsync } from "expo-av/build/AV";
+import mapStyle from "../assets/images/style.json";
 
 class GeoLocator extends Component {
   constructor() {
@@ -73,6 +74,8 @@ class GeoLocator extends Component {
           {this.state.location && (
             <View style={stylesd.mapContainer}>
               <MapView
+                customMapStyle={mapStyle}
+                provider={PROVIDER_GOOGLE}
                 style={stylesd.map}
                 initialRegion={{
                   latitude: this.state.location.coords.latitude,
