@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { View, Text, Button, Permission, TouchableOpacity } from "react-native";
 import * as Location from "expo-location";
+import { useNavigation } from "@react-navigation/native";
 //Import Files
 import stylesd from "../assets/stylesheets/Styles-darkold";
 import stylesl from "../assets/stylesheets/Styles-lightold";
@@ -51,6 +52,11 @@ class GeoLocator extends Component {
     this.setState({ location });
   };
 
+  goBack = () => {
+    const navigation = useNavigation();
+    navigation.navigate("MapTest");
+  }
+
   render() {
     return (
       <View>
@@ -86,7 +92,7 @@ class GeoLocator extends Component {
                 // set image={image} så har ni custom marker :)
                 />
               </MapView>
-              <TouchableOpacity style={stylesd.closeBtn} onPress={this.state.location = null}>
+              <TouchableOpacity style={stylesd.closeBtn} onPress={this.goBack}>
                 <Text style={stylesd.closeBtnText}>X</Text>
               </TouchableOpacity>
             </View>

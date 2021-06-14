@@ -1,13 +1,10 @@
 //Import React
 import React, { Component } from "react";
-import { View, Text, Button, TouchableOpacity } from "react-native";
-//Import Expo
-import { StatusBar } from "expo-status-bar";
+import { View } from "react-native";
+
 //Import Files
 import stylesd from "../assets/stylesheets/Styles-darkold";
-import stylesl from "../assets/stylesheets/Styles-lightold";
 import GeoLocator from "../scripts/GeoLocator";
-import MapAPI from "../scripts/MapAPI";
 
 // MAIN //
 class MapTest extends Component {
