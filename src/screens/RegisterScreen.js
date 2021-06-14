@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
+import {auth} from '../../firebase';
 import {
   StyleSheet,
   View,
@@ -10,8 +11,35 @@ import {
 } from "react-native";
 import Gradient from "../assets/images/backgroundGradient.png";
 
-class RegisterScreen extends Component {
-  render() {
+const RegisterScreen = () =>  {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const register = ()=>{
+    auth.createUserWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in
+    
+    var user = userCredential.user;
+    user.updateProfile({
+      displayName: username,
+
+
+    }).then(function (){
+      // Succesfgull
+    }).catch(function(){
+
+    });
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert(errorMessage);
+    // ..
+  });
+  }
+
     return (
       <View style={styles.container}>
         <View style={styles.background}>
@@ -30,12 +58,14 @@ class RegisterScreen extends Component {
                 <TextInput
                   placeholder="Username"
                   style={styles.usernameInput}
+                  onChangeText={text => setUsername(text)}
                 ></TextInput>
               </View>
               <View style={styles.email}>
                 <TextInput
                   placeholder="Email"
                   style={styles.emailInput}
+                  onChangeText={text => setEmail(text)}
                 ></TextInput>
               </View>
               <View style={styles.password}>
@@ -43,9 +73,10 @@ class RegisterScreen extends Component {
                   placeholder="Password"
                   secureTextEntry={true}
                   style={styles.passwordInput}
+                  onChangeText={text => setPassword(text)}
                 ></TextInput>
               </View>
-              <TouchableOpacity style={styles.signUp}>
+              <TouchableOpacity style={styles.signUp} onPress={register}>
                 <Text style={styles.createAccount}>Sign Up</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.button}>
@@ -64,7 +95,7 @@ class RegisterScreen extends Component {
         </View>
       </View>
     );
-  }
+  
 }
 
 var lemon = "#EAE2B7";

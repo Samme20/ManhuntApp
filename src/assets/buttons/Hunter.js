@@ -12,11 +12,17 @@ import {
 } from "react-native";
 //Import Expo
 import { Audio } from "expo-av";
+import { auth } from "../../../firebase";
 //Import Files
 
 const HunterButton = function () {
   const navigation = useNavigation();
   const [sound, setSound] = React.useState();
+  const signOut = () => {
+    auth.signOut().then(() =>{
+      navigation.navigate("Login");
+    })
+  }
 
   async function playSound() {
     console.log("Loading Sound");
@@ -41,7 +47,7 @@ const HunterButton = function () {
   return (
     <TouchableOpacity
       style={styles.hunterButton}
-      onPress={() => navigation.navigate("Lobby")}
+      onPress={signOut}
     >
       <Text style={styles.hunter}>Hunter</Text>
     </TouchableOpacity>

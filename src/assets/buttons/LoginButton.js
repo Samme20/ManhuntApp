@@ -3,15 +3,22 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
+import { auth } from "../../../firebase";
 //Import Files
 
-const LoginButton = function () {
+const LoginButton = function ({email, password}) {
   const navigation = useNavigation();
+  const signIn = ()=>{
+    auth.signInWithEmailAndPassword(email,password).catch((error)=>{
+      var errormessage = error.message;
+      alert(errormessage);
+    });
+  }
 
   return (
     <TouchableOpacity
       style={styles.loginButton}
-      onPress={() => navigation.navigate("Main")}
+      onPress={signIn}
     >
       <Text style={styles.loginText}>Login</Text>
     </TouchableOpacity>

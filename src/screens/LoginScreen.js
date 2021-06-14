@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState,useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -8,13 +8,28 @@ import {
   TouchableOpacity,
   Text,
 } from "react-native";
+import { auth } from "../../firebase";
 import CreateAccount from "../assets/buttons/CreateAccount";
 import LoginButton from "../assets/buttons/LoginButton";
 import Gradient from "../assets/images/backgroundGradient.png";
-
+import { useNavigation } from "@react-navigation/native";
 const Login = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(function (user){
+      if(user){
+        navigation.navigate("Main");
+      } else {
+        // No user is signed in.
+      }
+    });
+    return unsubscribe
+  })
   return (
     <View style={styles.container}>
       <View style={styles.background}>
@@ -44,7 +59,7 @@ const Login = () => {
                 onChangeText={text => setPassword(text)}
               ></TextInput>
             </View>
-            <LoginButton />
+            <LoginButton email={email} password={password}/>
             <CreateAccount />
           </View>
           <View style={styles.footer}>

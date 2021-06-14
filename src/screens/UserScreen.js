@@ -10,6 +10,7 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 import Svg, { Ellipse } from "react-native-svg";
 import Gradient from "../assets/images/backgroundGradient.png";
 import BackButton from "../assets/buttons/BackButton";
+import { auth } from "../../firebase";
 
 class UserScreen extends Component {
   render() {
@@ -24,7 +25,7 @@ class UserScreen extends Component {
             <View style={styles.headerColumn}>
               <View style={styles.header}>
                 <View style={styles.titleHelper}>
-                  <Text style={styles.username}>{"{Username}"}</Text>
+                  <Text style={styles.username}>{auth?.currentUser?.displayName}</Text>
                 </View>
                 <BackButton />
               </View>
