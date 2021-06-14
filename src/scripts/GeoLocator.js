@@ -76,13 +76,15 @@ class GeoLocator extends Component {
                   latitude: this.state.location.coords.latitude,
                   longitude: this.state.location.coords.longitude,
                 }}
+                image={{uri: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.shitpostbot.com%2Fimg%2Fsourceimages%2Ftyler1-head-meat-5a769017561c5.png&f=1&nofb=1'}}
                 title="This is you!"
                 description="your current pos"
-                // set image={image} så har ni custom marker :)
+              // set image={image} så har ni custom marker :)
               />
             </MapView>
           )}
         </TouchableOpacity>
+
       </View>
     );
   }

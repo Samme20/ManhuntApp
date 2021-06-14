@@ -101,6 +101,12 @@ export default StyleSheet.create({
     },
     map:{
         width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height / 2,
+        height: Dimensions.get('window').height,
     },
+    closeBtn:{
+        color: lemon,
+        fontSize: 30,
+        marginTop: 25,
+        position: 'absolute',
+    }
 });

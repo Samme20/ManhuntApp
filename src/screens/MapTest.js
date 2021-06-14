@@ -1,6 +1,6 @@
 //Import React
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, TouchableOpacity } from "react-native";
 //Import Expo
 import { StatusBar } from "expo-status-bar";
 //Import Files
@@ -14,6 +14,11 @@ class MapTest extends Component {
   render() {
     return (
       <View style={stylesd.body}>
+
+        <TouchableOpacity>
+          <Text style={stylesd.closeBtn}>X</Text>
+        </TouchableOpacity>
+        
         <StatusBar style="auto" />
 
         <View style={stylesd.content1}>
