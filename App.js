@@ -11,6 +11,7 @@ import Settings from './src/screens/Settings';
 import UserScreen from './src/screens/UserScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import LobbyScreen from './src/screens/LobbyScreen';
+import RegisterScreen from './src/screens/RegisterScreen';
 
 // MAIN //
 const Stack = createStackNavigator();
@@ -26,6 +27,7 @@ export default class App extends Component {
           <Stack.Screen name="User" component={UserScreen} options={{animationEnabled:false}}/>
           <Stack.Screen name="Login" component={LoginScreen} options={{animationEnabled:false}}/>
           <Stack.Screen name="Lobby" component={LobbyScreen} options={{animationEnabled:false}}/>
+          <Stack.Screen name="Register" component={RegisterScreen} options={{animationEnabled:false}}/>
         </Stack.Navigator>
       </NavigationContainer>
     ); 
