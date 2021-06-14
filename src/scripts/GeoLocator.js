@@ -2,11 +2,14 @@
 import React, { Component } from "react";
 import { View, Text, Button, Permission, TouchableOpacity } from "react-native";
 import * as Location from "expo-location";
+import { useNavigation } from "@react-navigation/native";
 //Import Files
 import stylesd from "../assets/stylesheets/Styles-darkold";
 import stylesl from "../assets/stylesheets/Styles-lightold";
 
-import MapView, { Marker } from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
+import { getNativeSourceAndFullInitialStatusForLoadAsync } from "expo-av/build/AV";
+import mapStyle from "../assets/images/style.json";
 
 class GeoLocator extends Component {
   constructor() {
@@ -51,6 +54,10 @@ class GeoLocator extends Component {
     this.setState({ location });
   };
 
+  goBack = () => {
+    this.setState({location: null})
+  }
+
   render() {
     return (
       <View>
@@ -67,6 +74,8 @@ class GeoLocator extends Component {
           {this.state.location && (
             <View style={stylesd.mapContainer}>
               <MapView
+                customMapStyle={mapStyle}
+                provider={PROVIDER_GOOGLE}
                 style={stylesd.map}
                 initialRegion={{
                   latitude: this.state.location.coords.latitude,
@@ -86,7 +95,7 @@ class GeoLocator extends Component {
                 // set image={image} så har ni custom marker :)
                 />
               </MapView>
-              <TouchableOpacity style={stylesd.closeBtn} onPress={this.state.location = null}>
+              <TouchableOpacity style={stylesd.closeBtn} onPress={this.goBack}>
                 <Text style={stylesd.closeBtnText}>X</Text>
               </TouchableOpacity>
             </View>

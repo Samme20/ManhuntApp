@@ -13,3 +13,7 @@ https://www.youtube.com/watch?v=EwZUQuPjakg&list=PLyuRouwmQCjkT4oMPGc1_4yggaFTLy
 
 //MAPS REALLY  HELPFUL, ONCHANGE
 https://dev-yakuza.posstree.com/en/react-native/react-native-maps/
+
+
+//GOOLE MAP STYLER
+https://mapstyle.withgoogle.com/
