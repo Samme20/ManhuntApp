@@ -86,8 +86,8 @@ class GeoLocator extends Component {
                 // set image={image} så har ni custom marker :)
                 />
               </MapView>
-              <TouchableOpacity>
-                <Text style={stylesd.closeBtn}>X</Text>
+              <TouchableOpacity style={stylesd.closeBtn} onPress={this.state.location = null}>
+                <Text style={stylesd.closeBtnText}>X</Text>
               </TouchableOpacity>
             </View>
           )}

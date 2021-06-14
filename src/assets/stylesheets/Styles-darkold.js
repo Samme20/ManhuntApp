@@ -125,9 +125,14 @@ export default StyleSheet.create({
         alignContent: 'center',
     },
     closeBtn:{
-        color: maxred,
-        fontSize: 30,
-        textAlign: 'center',
         position: 'absolute',
+        left: 0,
+        top: 0,
+        margin: 20,
+    },
+    closeBtnText:{
+        color: '#000000',
+        fontSize: 59,
+        textAlign: 'center',
     },
 });
