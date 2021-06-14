@@ -6,10 +6,10 @@ import {
   TouchableOpacity,
   TextInput,
   Text,
-  Settings,
 } from "react-native";
 import Gradient from "../assets/images/backgroundGradient.png";
 import User from "../assets/buttons/User";
+import Settings from "../assets/buttons/Settings";
 
 class LobbyScreen extends Component {
   render() {
