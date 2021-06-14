@@ -14,7 +14,7 @@ import config from "../../../Config.json";
 
 const Modeswitch = function () {
   const [isEnabled, setIsEnabled] = useState(config.dark);
-  const toggleSwitch = () => {
+  const toggleSwitch = isEnabled => {
     setIsEnabled((previousState) => !previousState);
     config.dark = isEnabled;
     console.log(isEnabled);
