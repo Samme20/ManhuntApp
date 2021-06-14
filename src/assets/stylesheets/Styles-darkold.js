@@ -1,4 +1,4 @@
-import { StyleSheet, Button, Dimensions } from 'react-native';
+import { StyleSheet, Button, Dimensions, TouchableOpacity } from 'react-native';
 
 
 //Main theme colors
@@ -103,10 +103,31 @@ export default StyleSheet.create({
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height,
     },
-    closeBtn:{
+    preMapContainer:{
+        textAlign: 'center',
+        justifyContent: 'center',
+        alignContent: 'center',
+        marginTop: 175,
+    },
+    mapTitle: {
+        color: maxred,
+        fontSize: 60,
+        textAlign: 'center',
+        marginBottom: 30,
+    },
+    mapText: {
         color: lemon,
         fontSize: 30,
-        marginTop: 25,
+        textAlign: 'center',
+    },
+    mapContainer:{
+        justifyContent: 'center',
+        alignContent: 'center',
+    },
+    closeBtn:{
+        color: maxred,
+        fontSize: 30,
+        textAlign: 'center',
         position: 'absolute',
-    }
+    },
 });

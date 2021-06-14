@@ -14,20 +14,7 @@ class MapTest extends Component {
   render() {
     return (
       <View style={stylesd.body}>
-
-        <TouchableOpacity>
-          <Text style={stylesd.closeBtn}>X</Text>
-        </TouchableOpacity>
-        
-        <StatusBar style="auto" />
-
-        <View style={stylesd.content1}>
-          <Text style={stylesd.title}>Google Map API test</Text>
-        </View>
-
-        <View style={stylesd.content1}>
-          <GeoLocator />
-        </View>
+        <GeoLocator />
       </View>
     );
   }

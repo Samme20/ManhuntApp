@@ -54,34 +54,42 @@ class GeoLocator extends Component {
   render() {
     return (
       <View>
-        <TouchableOpacity onPress={this.findCurrentLocationAsync}>
+        <TouchableOpacity activeOpacity={1} onPress={this.findCurrentLocationAsync}>
           {!this.state.location && (
-            <Text style={stylesd.text}>Location text</Text>
+            <View style={stylesd.preMapContainer}>
+              <Text style={stylesd.mapTitle}>Google Map API test</Text>
+              <Text style={stylesd.mapText}>Click me UwU!</Text>
+            </View>
           )}
           {this.state.errorMessage && (
             <Text style={stylesd.text}>{this.state.error}</Text>
           )}
           {this.state.location && (
-            <MapView
-              style={stylesd.map}
-              initialRegion={{
-                latitude: this.state.location.coords.latitude,
-                longitude: this.state.location.coords.longitude,
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421,
-              }}
-            >
-              <Marker
-                coordinate={{
+            <View style={stylesd.mapContainer}>
+              <MapView
+                style={stylesd.map}
+                initialRegion={{
                   latitude: this.state.location.coords.latitude,
                   longitude: this.state.location.coords.longitude,
+                  latitudeDelta: 0.0922,
+                  longitudeDelta: 0.0421,
                 }}
-                image={{uri: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.shitpostbot.com%2Fimg%2Fsourceimages%2Ftyler1-head-meat-5a769017561c5.png&f=1&nofb=1'}}
-                title="This is you!"
-                description="your current pos"
-              // set image={image} så har ni custom marker :)
-              />
-            </MapView>
+              >
+                <Marker
+                  coordinate={{
+                    latitude: this.state.location.coords.latitude,
+                    longitude: this.state.location.coords.longitude,
+                  }}
+                  image={require('../assets/images/mapMarker.png')}
+                  title="This is you!"
+                  description="your current pos"
+                // set image={image} så har ni custom marker :)
+                />
+              </MapView>
+              <TouchableOpacity>
+                <Text style={stylesd.closeBtn}>X</Text>
+              </TouchableOpacity>
+            </View>
           )}
         </TouchableOpacity>
 
