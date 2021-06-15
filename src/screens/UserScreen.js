@@ -1,19 +1,53 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import {
   StyleSheet,
   View,
   ImageBackground,
   Text,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import Svg, { Ellipse } from "react-native-svg";
 import Gradient from "../assets/images/backgroundGradient.png";
 import BackButton from "../assets/buttons/BackButton";
+import ChangeImagebtn from "../assets/buttons/ChangeImagebtn";
+import * as ImagePicker from 'expo-image-picker';
 import { auth } from "../../firebase";
 
-class UserScreen extends Component {
-  render() {
+const UserScreen = () =>  {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+    let openImagePickerAsync = async () => {
+      let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+  
+      if (permissionResult.granted === false) {
+        alert("Permission to access camera roll is required!");
+        return;
+      }
+  
+      let pickerResult = await ImagePicker.launchImageLibraryAsync();
+      console.log(pickerResult);
+      if (pickerResult.cancelled === true) {
+        return;
+      }
+      
+      setSelectedImage({ localUri: pickerResult.uri });
+      if (pickerResult.uri !== null) {
+        auth.currentUser.updateProfile({
+          photoURL: pickerResult.uri,
+    
+    
+        }).then(function (){
+          alert("Image changed!")
+        }).catch(function(error){
+    
+        });
+        
+      }
+
+    }
+    
     return (
       <View style={styles.container}>
         <View style={styles.background}>
@@ -30,18 +64,8 @@ class UserScreen extends Component {
                 <BackButton />
               </View>
               <View style={styles.pictureForm}>
-                <Svg viewBox="0 0 160.33 160.33" style={styles.userPicture}>
-                  <Ellipse
-                    stroke="rgba(230, 230, 230,1)"
-                    strokeWidth={0}
-                    fill="rgba(230, 230, 230,1)"
-                    cx={80}
-                    cy={80}
-                    rx={80}
-                    ry={80}
-                  ></Ellipse>
-                </Svg>
-                <TouchableOpacity style={styles.pictureButton}>
+                <Image source={{uri: auth?.currentUser?.photoURL}} style={{width: 200, height:200, borderRadius:200}}/>
+                <TouchableOpacity style={styles.pictureButton} onPress={() => openImagePickerAsync()}>
                   <Text style={styles.changePicture}>Change Picture</Text>
                   <EntypoIcon
                     name="camera"
@@ -70,7 +94,6 @@ class UserScreen extends Component {
         </View>
       </View>
     );
-  }
 }
 
 // STYLES FOR SCREEN

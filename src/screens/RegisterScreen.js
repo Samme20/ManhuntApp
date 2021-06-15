@@ -23,6 +23,7 @@ const RegisterScreen = () =>  {
     var user = userCredential.user;
     user.updateProfile({
       displayName: username,
+      photoURL: "https://d2iltjk184xms5.cloudfront.net/uploads/photo/file/18142/small_original.jpg",
 
 
     }).then(function (){
