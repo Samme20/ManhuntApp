@@ -23,7 +23,7 @@ const RegisterScreen = () =>  {
     var user = userCredential.user;
     user.updateProfile({
       displayName: username,
-      photoURL: "https://d2iltjk184xms5.cloudfront.net/uploads/photo/file/18142/small_original.jpg",
+      photoURL: "http://www.williamsson.fi/content/uploads/2019/07/default-avatar-profile-icon-vector-189423811.jpg",
 
 
     }).then(function (){
