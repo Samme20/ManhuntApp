@@ -2,7 +2,6 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/Entypo";
 import { auth } from "../../../firebase";
 //Import Files
 
@@ -27,17 +26,21 @@ const LoginButton = function ({email, password}) {
 
 // STYLE FORM BUTTON
 
-var lemon = "#EAE2B7";
-var maxred = "#D62828";
-var prusblue = "#003049";
-var orange = "#F77F00";
-var black = "#121212";
+const ColorStyle = require('../Json/lightStyle.json');
+
+var lemon = ColorStyle["lemon"];
+var maxred = ColorStyle["maxred"];
+var prusblue = ColorStyle["prusblue"];
+var orange = ColorStyle["orange"];
+var black = ColorStyle["theme"];
+var darkBlue = ColorStyle["darkBlue"];
+var lightBlue = ColorStyle["lightBlue"];
 
 const styles = StyleSheet.create({
   loginButton: {
     height: 47,
     alignSelf: "stretch",
-    backgroundColor: "rgba(230, 230, 230,0.25)",
+    backgroundColor: lightBlue,
     borderRadius: 6,
     flexDirection: "row",
     justifyContent: "center",

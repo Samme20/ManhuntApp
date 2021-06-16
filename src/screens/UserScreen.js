@@ -8,7 +8,6 @@ import {
   Image,
 } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
-import Svg, { Ellipse } from "react-native-svg";
 import Gradient from "../assets/images/backgroundGradient.png";
 import BackButton from "../assets/buttons/BackButton";
 import ChangeImagebtn from "../assets/buttons/ChangeImagebtn";
@@ -40,6 +39,8 @@ const UserScreen = () =>  {
     
         }).then(function (){
           alert("Image changed!")
+          //Reload the page here, maybe just set the screen navigation again?
+          
         }).catch(function(error){
     
         });
@@ -98,11 +99,19 @@ const UserScreen = () =>  {
 
 // STYLES FOR SCREEN
 
-var lemon = "#EAE2B7";
-var maxred = "#D62828";
-var prusblue = "#003049";
-var orange = "#F77F00";
-var black = "#121212";
+//If dark
+const ColorStyle = require('../assets/Json/darkStyle.json');
+
+//if light
+//const ColorStyle = require('../assets/Json/lightStyle.json');
+
+var lemon = ColorStyle["lemon"];
+var maxred = ColorStyle["maxred"];
+var prusblue = ColorStyle["prusblue"];
+var orange = ColorStyle["orange"];
+var black = ColorStyle["theme"];
+var darkBlue = ColorStyle["darkBlue"];
+var lightBlue = ColorStyle["lightBlue"];
 
 const styles = StyleSheet.create({
   container: {

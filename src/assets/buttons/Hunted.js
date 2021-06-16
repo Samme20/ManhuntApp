@@ -12,18 +12,21 @@ const HuntedButton = function () {
       style={styles.huntedButton}
       onPress={() => navigation.navigate("MapTest")}
     >
-      <Text style={styles.hunted}>Hunted</Text>
+      <Text style={styles.hunted}>Map Test</Text>
     </TouchableOpacity>
   );
 };
 
 // STYLE FORM BUTTON
 
-var lemon = "#EAE2B7";
-var maxred = "#D62828";
-var prusblue = "#003049";
-var orange = "#F77F00";
-var black = "#121212";
+const ColorStyle = require('../Json/lightStyle.json');
+
+var lemon = ColorStyle["lemon"];
+var maxred = ColorStyle["maxred"];
+var prusblue = ColorStyle["prusblue"];
+var orange = ColorStyle["orange"];
+var black = ColorStyle["theme"];
+
 
 const styles = StyleSheet.create({
   huntedButton: {

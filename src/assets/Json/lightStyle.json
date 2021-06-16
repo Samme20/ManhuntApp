@@ -1,0 +1,12 @@
+
+{
+    "lemon": "#EAE2B7",
+    "maxred": "#D62828",
+    "prusblue": "#003049",
+    "orange": "#F77F00",
+    "theme": "#ffffff",
+    "switchOn": "#f5dd4b",
+    "lightBlue": "rgba(230, 230, 230,0.25)",
+    "darkBlue": "rgba(230, 230, 230,0.12)",
+    "comment": "name the colors accordingly so we can switch between json files and that way switch from a ligt theme to a dark one"
+}

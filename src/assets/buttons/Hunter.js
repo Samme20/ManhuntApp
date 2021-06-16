@@ -4,10 +4,6 @@ import { useNavigation } from "@react-navigation/native";
 import {
   StyleSheet,
   Text,
-  View,
-  Button,
-  Linking,
-  TextInput,
   TouchableOpacity,
 } from "react-native";
 //Import Expo
@@ -56,11 +52,13 @@ const HunterButton = function () {
 
 // STYLE FORM BUTTON
 
-var lemon = "#EAE2B7";
-var maxred = "#D62828";
-var prusblue = "#003049";
-var orange = "#F77F00";
-var black = "#121212";
+const ColorStyle = require('../Json/lightStyle.json');
+
+var lemon = ColorStyle["lemon"];
+var maxred = ColorStyle["maxred"];
+var prusblue = ColorStyle["prusblue"];
+var orange = ColorStyle["orange"];
+var black = ColorStyle["theme"];
 
 const styles = StyleSheet.create({
   hunterButton: {

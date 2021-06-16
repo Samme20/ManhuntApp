@@ -52,11 +52,17 @@ class Settings extends Component {
 
 // STYLES FOR SCREEN
 
-var lemon = "#EAE2B7";
-var maxred = "#D62828";
-var prusblue = "#003049";
-var orange = "#F77F00";
-var black = "#121212";
+//If dark
+const ColorStyle = require('../assets/Json/darkStyle.json');
+
+//if light
+//const ColorStyle = require('../assets/Json/lightStyle.json');
+
+var lemon = ColorStyle["lemon"];
+var maxred = ColorStyle["maxred"];
+var prusblue = ColorStyle["prusblue"];
+var orange = ColorStyle["orange"];
+var black = ColorStyle["theme"];
 
 const styles = StyleSheet.create({
   container: {

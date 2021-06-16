@@ -1,16 +1,20 @@
 //Import React
 import React, { useState } from "react";
 import {
-  Text,
-  Image,
-  TouchableOpacity,
   Switch,
   AsyncStorage,
 } from "react-native";
 //Import Files
 import stylesd from "../stylesheets/Styles-darkold";
-import stylesl from "../stylesheets/Styles-lightold";
-import config from "../../../Config.json";
+//import config from "../Json/Config.json";
+
+var config = require("../Json/Config.json");
+
+//If(light mode == true)
+const ColorStyle = require('../Json/lightStyle.json');
+
+//If (light mode == false)
+//const ColorStyle = require('../Json/darkStyle.json');  //EXAMPLE
 
 const Modeswitch = function () {
   const [isEnabled, setIsEnabled] = useState(config.dark);
@@ -23,9 +27,9 @@ const Modeswitch = function () {
 
   return (
     <Switch
-      trackColor={{ false: "#003049", true: "#003049" }}
-      thumbColor={isEnabled ? "#f5dd4b" : "#F77F00"}
-      ios_backgroundColor="#003049"
+      trackColor={{ false: ColorStyle["prusblue"], true: ColorStyle["prusblue"] }}
+      thumbColor={isEnabled ? ColorStyle["switchOn"] : ColorStyle["orange"]}
+      ios_backgroundColor= { ColorStyle["prusblue"] }
       onValueChange={toggleSwitch}
       value={isEnabled}
       style={stylesd.darklightmodeswitch}

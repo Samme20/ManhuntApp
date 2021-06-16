@@ -76,11 +76,19 @@ const Login = () => {
 
 // STYLE FOR SCREEN
 
-var lemon = "#EAE2B7";
-var maxred = "#D62828";
-var prusblue = "#003049";
-var orange = "#F77F00";
-var black = "#121212";
+//If dark
+const ColorStyle = require('../assets/Json/darkStyle.json');
+
+//if light
+//const ColorStyle = require('../assets/Json/lightStyle.json');
+
+var lemon = ColorStyle["lemon"];
+var maxred = ColorStyle["maxred"];
+var prusblue = ColorStyle["prusblue"];
+var orange = ColorStyle["orange"];
+var black = ColorStyle["theme"];
+var darkBlue = ColorStyle["darkBlue"];
+var lightBlue = ColorStyle["lightBlue"];
 
 const styles = StyleSheet.create({
   container: {
@@ -110,7 +118,7 @@ const styles = StyleSheet.create({
   email: {
     height: 47,
     borderRadius: 6,
-    backgroundColor: "rgba(230, 230, 230,0.12)",
+    backgroundColor: darkBlue,
     borderTopRightRadius: 6,
     borderBottomRightRadius: 6,
     alignSelf: "stretch",
@@ -125,7 +133,7 @@ const styles = StyleSheet.create({
   password: {
     height: 47,
     borderRadius: 6,
-    backgroundColor: "rgba(230, 230, 230,0.12)",
+    backgroundColor: darkBlue,
     borderTopRightRadius: 6,
     borderBottomRightRadius: 6,
     alignSelf: "stretch",
@@ -140,7 +148,7 @@ const styles = StyleSheet.create({
   loginButton: {
     height: 47,
     alignSelf: "stretch",
-    backgroundColor: "rgba(230, 230, 230,0.25)",
+    backgroundColor: lightBlue,
     borderRadius: 6,
     flexDirection: "row",
     justifyContent: "center",
@@ -155,7 +163,7 @@ const styles = StyleSheet.create({
   signUp: {
     height: 47,
     alignSelf: "stretch",
-    backgroundColor: "rgba(230, 230, 230,0.25)",
+    backgroundColor: lightBlue,
     borderRadius: 6,
     alignItems: "center",
     justifyContent: "center",

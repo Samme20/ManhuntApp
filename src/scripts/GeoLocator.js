@@ -1,14 +1,9 @@
 //Import React
 import React, { Component } from "react";
-import { View, Text, Button, Permission, TouchableOpacity } from "react-native";
+import { View, Text, Button, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import * as Location from "expo-location";
-import { useNavigation } from "@react-navigation/native";
-//Import Files
-import stylesd from "../assets/stylesheets/Styles-darkold";
-import stylesl from "../assets/stylesheets/Styles-lightold";
 
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
-import { getNativeSourceAndFullInitialStatusForLoadAsync } from "expo-av/build/AV";
 import mapStyle from "../assets/images/style.json";
 
 class GeoLocator extends Component {
@@ -55,7 +50,7 @@ class GeoLocator extends Component {
   };
 
   goBack = () => {
-    this.setState({location: null})
+    this.setState({ location: null })
   }
 
   render() {
@@ -63,20 +58,20 @@ class GeoLocator extends Component {
       <View>
         <TouchableOpacity activeOpacity={1} onPress={this.findCurrentLocationAsync}>
           {!this.state.location && (
-            <View style={stylesd.preMapContainer}>
-              <Text style={stylesd.mapTitle}>Google Map API test</Text>
-              <Text style={stylesd.mapText}>Click me UwU!</Text>
+            <View style={styles.preMapContainer}>
+              <Text style={styles.mapTitle}>Google Map API test</Text>
+              <Text style={styles.mapText}>Click me UwU!</Text>
             </View>
           )}
           {this.state.errorMessage && (
-            <Text style={stylesd.text}>{this.state.error}</Text>
+            <Text style={styles.text}>{this.state.error}</Text>
           )}
           {this.state.location && (
-            <View style={stylesd.mapContainer}>
+            <View style={styles.mapContainer}>
               <MapView
                 customMapStyle={mapStyle}
                 provider={PROVIDER_GOOGLE}
-                style={stylesd.map}
+                style={styles.map}
                 initialRegion={{
                   latitude: this.state.location.coords.latitude,
                   longitude: this.state.location.coords.longitude,
@@ -95,8 +90,8 @@ class GeoLocator extends Component {
                 // set image={image} så har ni custom marker :)
                 />
               </MapView>
-              <TouchableOpacity style={stylesd.closeBtn} onPress={this.goBack}>
-                <Text style={stylesd.closeBtnText}>X</Text>
+              <TouchableOpacity style={styles.closeBtn} onPress={this.goBack}>
+                <Text style={styles.closeBtnText}>X</Text>
               </TouchableOpacity>
             </View>
           )}
@@ -106,5 +101,64 @@ class GeoLocator extends Component {
     );
   }
 }
+
+//Styles
+
+//If dark
+const ColorStyle = require('../assets/Json/darkStyle.json');
+
+//if light
+//const ColorStyle = require('../assets/Json/lightStyle.json');
+
+var lemon = ColorStyle["lemon"];
+var maxred = ColorStyle["maxred"];
+var prusblue = ColorStyle["prusblue"];
+var orange = ColorStyle["orange"];
+var black = ColorStyle["theme"];
+
+
+const styles = StyleSheet.create({
+  preMapContainer: {
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    marginTop: 175,
+  },
+  mapTitle: {
+    color: maxred,
+    fontSize: 60,
+    textAlign: 'center',
+    marginBottom: 30,
+  },
+  mapText: {
+    color: lemon,
+    fontSize: 30,
+    textAlign: 'center',
+  },
+  mapContainer: {
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+  closeBtn: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    margin: 20,
+  },
+  closeBtnText: {
+    color: '#000000',
+    fontSize: 59,
+    textAlign: 'center',
+  },
+  map: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+  },
+  text: {
+    color: lemon,
+    fontSize: 30,
+    margin: 10,
+  },
+});
 
 export default GeoLocator;
