@@ -10,9 +10,9 @@ const HuntedButton = function () {
   return (
     <TouchableOpacity
       style={styles.huntedButton}
-      onPress={() => navigation.navigate("MapTest")}
+      onPress={() => navigation.navigate("LoginTest")}
     >
-      <Text style={styles.hunted}>Map Test</Text>
+      <Text style={styles.hunted}>New login Test</Text>
     </TouchableOpacity>
   );
 };

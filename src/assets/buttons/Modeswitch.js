@@ -1,24 +1,15 @@
 //Import React
 import React, { useState } from "react";
-import {
-  Switch,
-  AsyncStorage,
-} from "react-native";
+import { Switch, AsyncStorage, StyleSheet } from "react-native";
 //Import Files
-import stylesd from "../stylesheets/Styles-darkold";
 //import config from "../Json/Config.json";
 
 var config = require("../Json/Config.json");
 
-//If(light mode == true)
-const ColorStyle = require('../Json/lightStyle.json');
-
-//If (light mode == false)
-//const ColorStyle = require('../Json/darkStyle.json');  //EXAMPLE
 
 const Modeswitch = function () {
   const [isEnabled, setIsEnabled] = useState(config.dark);
-  const toggleSwitch = isEnabled => {
+  const toggleSwitch = (isEnabled) => {
     setIsEnabled((previousState) => !previousState);
     config.dark = isEnabled;
     console.log(isEnabled);
@@ -27,14 +18,37 @@ const Modeswitch = function () {
 
   return (
     <Switch
-      trackColor={{ false: ColorStyle["prusblue"], true: ColorStyle["prusblue"] }}
+      trackColor={{
+        false: ColorStyle["prusblue"],
+        true: ColorStyle["prusblue"],
+      }}
       thumbColor={isEnabled ? ColorStyle["switchOn"] : ColorStyle["orange"]}
-      ios_backgroundColor= { ColorStyle["prusblue"] }
+      ios_backgroundColor={ColorStyle["prusblue"]}
       onValueChange={toggleSwitch}
       value={isEnabled}
-      style={stylesd.darklightmodeswitch}
+      style={styles.darklightmodeswitch}
     />
   );
 };
 
+//Styles
+
+//If dark
+const ColorStyle = require('../Json/lightStyle.json');
+
+//if light
+//const ColorStyle = require('../assets/Json/lightStyle.json');
+
+var lemon = ColorStyle["lemon"];
+var maxred = ColorStyle["maxred"];
+var prusblue = ColorStyle["prusblue"];
+var orange = ColorStyle["orange"];
+var black = ColorStyle["theme"];
+
+const styles = StyleSheet.create({
+  darklightmodeswitch: {
+    width: 45,
+    height: 23,
+  },
+});
 export default Modeswitch;
