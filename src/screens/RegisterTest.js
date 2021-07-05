@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
   Text,
 } from "react-native";
-import { Center } from "@builderx/utils";
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
+
 
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
@@ -24,7 +24,11 @@ function RegisterTest(props) {
   } else {
     return (
       <View style={styles.root}>
-        <StatusBar barStyle="light-content" backgroundColor="rgba(0,0,0,0)" />
+        <StatusBar
+          hidden
+          barStyle="light-content"
+          backgroundColor="rgba(0,0,0,0)"
+        />
         <View style={styles.background1}>
           <ImageBackground
             style={styles.rect3}
@@ -83,7 +87,7 @@ function RegisterTest(props) {
                     ></TextInput>
                   </View>
                   <TouchableOpacity
-                    onPress={() => props.navigation.navigate("Timeline")}
+                    onPress={() => props.navigation.navigate("Main")}
                     style={styles.button}
                   >
                     <Text style={styles.register}>Register</Text>
@@ -125,8 +129,7 @@ const styles = StyleSheet.create({
   logo1: {
     width: 276,
     height: 56,
-    flexDirection: "row",
-    marginLeft: 2
+    flexDirection: "row"
   },
   w1: {
     fontFamily: "roboto-regular",
@@ -167,7 +170,7 @@ const styles = StyleSheet.create({
   },
   form: {
     height: 355,
-    marginTop: 34
+    marginTop: 23
   },
   text3: {
     color: "rgba(255,255,255,1)",
@@ -279,10 +282,10 @@ const styles = StyleSheet.create({
     flex: 1
   },
   footerTexts1: {
-    height: 61,
-    marginBottom: 94,
-    marginLeft: 41,
-    marginRight: 32
+    height: 58,
+    marginBottom: 87,
+    marginLeft: 39,
+    marginRight: 34
   },
   registerIntro1: {
     fontFamily: "roboto-regular",
